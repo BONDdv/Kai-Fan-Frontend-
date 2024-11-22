@@ -4,7 +4,7 @@ import Menu from '../pages/Menu';
 import Home from '../pages/Home';
 import Cart from '../pages/Cart';
 import History from '../pages/user/History';
-import CheckOut from '../pages/CheckOut';
+import CheckOut from '../pages/Checkout';
 import Login from '../pages/auth/Login';
 import Register from '../pages/auth/Register';
 import Layout from '../layouts/layout';

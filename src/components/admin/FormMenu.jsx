@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import useFoodStore from '../../store/food-store'
 import { createMenu, deleteMenu, readMenu, updateMenu } from '../../api/menu'
 import { toast } from 'react-toastify'
-import UploadFile from './UploadFile'
+import UploadFile from './Uploadfile'
 import { Pencil } from 'lucide-react';
 import { Link } from 'react-router-dom'
 import { Trash2 } from 'lucide-react';

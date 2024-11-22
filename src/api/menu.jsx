@@ -1,10 +1,10 @@
 import axios from "axios";
-
+const URL = import.meta.env.VITE_API_URL
 
 
 export const createMenu = async (token, form) => {
 
-    return axios.post('http://localhost:9000/api/menu', form, {
+    return axios.post(`${URL}/api/menu`, form, {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -12,11 +12,11 @@ export const createMenu = async (token, form) => {
 }
 export const listMenu = async (count = 100) => {
 
-    return axios.get('http://localhost:9000/api/menus/' + count)
+    return axios.get(`${URL}/api/menus/` + count)
 }
 export const readMenu = async (token, id) => {
 
-    return axios.get('http://localhost:9000/api/menu/' + id, {
+    return axios.get(`${URL}/api/menu/` + id, {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -24,7 +24,7 @@ export const readMenu = async (token, id) => {
 }
 export const deleteMenu = async (token, id) => {
 
-    return axios.delete('http://localhost:9000/api/menu/' + id, {
+    return axios.delete(`${URL}/api/menu/` + id, {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -32,7 +32,7 @@ export const deleteMenu = async (token, id) => {
 }
 export const updateMenu = async (token, id, form) => {
 
-    return axios.put('http://localhost:9000/api/menu/' + id, form, {
+    return axios.put(`${URL}/api/menu/` + id, form, {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -42,7 +42,7 @@ export const updateMenu = async (token, id, form) => {
 export const uploadFiles = async (token, form) => {
     
     // console.log('form api frontent', form) 
-    return axios.post('http://localhost:9000/api/images', {
+    return axios.post(`${URL}/api/images`, {
         image: form
     }, {
         headers: {
@@ -53,7 +53,7 @@ export const uploadFiles = async (token, form) => {
 export const removeFiles = async (token, public_id) => {
     
     // console.log('form api frontent', form) 
-    return axios.post('http://localhost:9000/api/remove-images', {
+    return axios.post(`${URL}/api/remove-images`, {
         public_id
     }, {
         headers: {
@@ -64,5 +64,5 @@ export const removeFiles = async (token, public_id) => {
 
 export const searchFillter = async (arg) => {
 
-    return axios.post('http://localhost:9000/api/search/filters' ,arg)
+    return axios.post(`${URL}/api/search/filters` ,arg)
 }

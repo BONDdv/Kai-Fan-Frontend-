@@ -5,6 +5,8 @@ import { listCategory } from "../api/Category";
 import { listMenu, searchFillter } from "../api/menu";
 import _ from 'lodash';
 
+
+const URL = import.meta.env.VITE_API_URL
 const foodStore = (set, get) => ({
     user: null,
     token: null,
@@ -66,7 +68,7 @@ const foodStore = (set, get) => ({
     // ฟังก์ชันเข้าสู่ระบบ
     actionLogin: async (form) => {
         try {
-            const res = await axios.post('http://localhost:9000/api/login', form);
+            const res = await axios.post(`${URL}/api/login`, form);
             set({
                 user: res.data.payload,
                 token: res.data.token

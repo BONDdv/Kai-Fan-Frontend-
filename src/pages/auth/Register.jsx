@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
-
+const URL = import.meta.env.VITE_API_URL
 
 const Register = () => {
   // Javascript
@@ -26,7 +26,7 @@ const Register = () => {
     console.log(form)
     // Send to Back
     try {
-      const res = await axios.post('http://localhost:9000/api/register', form)
+      const res = await axios.post(`${URL}/api/register`, form)
 
       console.log(res.data)
       toast.success(res.data)

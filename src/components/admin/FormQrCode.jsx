@@ -3,10 +3,12 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 import useFoodStore from '../../store/food-store'; 
 
+const URL = import.meta.env.VITE_API_URL
+
 const FormQrCode = () => {
     const [tableId, setTableId] = useState('');
     const [qrCodeData, setQrCodeData] = useState('');
-    const [baseUrl, setBaseUrl] = useState('http://localhost:9000/api/admin/create-qr');
+    const [baseUrl, setBaseUrl] = useState(`${URL}/api/admin/create-qr`);
     const [qrCodes, setQrCodes] = useState([]);
 
     const token = useFoodStore((state) => state.token);
@@ -18,7 +20,7 @@ const FormQrCode = () => {
 
     const handleDeleteQrCode = async (tableId) => {
         try {
-            const res = await axios.delete(`http://localhost:9000/api/admin/create-qr/${tableId}`, {
+            const res = await axios.delete(`${URL}/api/admin/create-qr/${tableId}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

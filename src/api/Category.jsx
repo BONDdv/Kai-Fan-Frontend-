@@ -1,10 +1,11 @@
 import axios from "axios";
+const URL = import.meta.env.VITE_API_URL
 
 
 
 export const createCategory = async (token ,form) => {
 
-    return axios.post('http://localhost:9000/api/category', form, {
+    return axios.post(`${URL}/api/category`, form, {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -12,11 +13,11 @@ export const createCategory = async (token ,form) => {
 }
 export const listCategory = async (count = 100 ) => {
 
-    return axios.get('http://localhost:9000/api/categoryAll/' + count
+    return axios.get(`${URL}/api/categoryAll/` + count
 )}
 
 export const readCategory = async (token,id) => {
-    return axios.get('http://localhost:9000/api/category/' + id, {
+    return axios.get(`${URL}/api/category/` + id, {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -24,14 +25,14 @@ export const readCategory = async (token,id) => {
 }
 
 export const removeCategory = async (token, id) => {
-    return axios.delete('http://localhost:9000/api/category/' + id, {
+    return axios.delete(`${URL}/api/category/` + id, {
         headers: {
             Authorization: `Bearer ${token}`
         }
     })
 }
 export const updateCategory = async (token, id, form) => {
-    return axios.put('http://localhost:9000/api/category/' + id, form, {
+    return axios.put(`${URL}/api/category/` + id, form, {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -40,7 +41,7 @@ export const updateCategory = async (token, id, form) => {
 
 export const uploadImgCategory = async (token, form) => {
 
-    return axios.post('http://localhost:9000/api/images-category', {
+    return axios.post(`${URL}/api/images-category`, {
         image: form
     },{
         headers: {
@@ -50,7 +51,7 @@ export const uploadImgCategory = async (token, form) => {
 }
 export const removeImgCategory = async (token, public_id) => {
 
-    return axios.post('http://localhost:9000/api/remove-images-category', {
+    return axios.post(`${URL}/api/remove-images-category`, {
         public_id
     },{
         headers: {

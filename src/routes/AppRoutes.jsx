@@ -7,7 +7,7 @@ import History from '../pages/user/History';
 import CheckOut from '../pages/Checkout';
 import Login from '../pages/auth/Login';
 import Register from '../pages/auth/Register';
-import Layout from '../layouts/layout';
+import Layout from '../layouts/Layout';
 import LayoutAdmin from '../layouts/LayoutAdmin';
 import Dashboard from '../pages/admin/Dashboard';
 import Category from '../pages/admin/Category';
